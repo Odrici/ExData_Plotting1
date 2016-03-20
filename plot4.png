@@ -1,4 +1,4 @@
-
+## plotting to the png file device
 plot4 <- function() {
         par(mfcol=c(2,2))
         
@@ -20,7 +20,7 @@ plot4 <- function() {
         
         #OUTPUT
         dev.copy(png, file="plot4.png", width=480, height=480)
-        dev.off()
+        dev.off() ## closing the ffile device
         cat("plot4.png has been saved in", getwd())
 }
 plot4()
