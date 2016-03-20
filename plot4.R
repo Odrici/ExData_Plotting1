@@ -8,7 +8,7 @@ start<-which(data$DateTime==strptime("2007-02-01", "%Y-%m-%d"))
 end<-which(data$DateTime==strptime("2007-02-02 23:59:00", "%Y-%m-%d %H:%M:%S"))
 
 data2<-data[start:end,]
-class(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global_reactive_power "factor",$Voltage "factor",$Global_intensity "factor",$Sub_metering_1 "factor"
+str(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global_reactive_power "factor",$Voltage "factor",$Global_intensity "factor",$Sub_metering_1 "factor"
             ##$Sub_metering_2 "factor",$Sub_metering_3 "numeric"
 hist(as.numeric(as.character(data2$Global_active_power)), 
      main="Global Active Power",
@@ -38,3 +38,29 @@ plot(data2$DateTime, as.numeric(as.character(data2$Voltage)),type='l',
 
 plot(data2$DateTime, as.numeric(as.character(data2$Global_reactive_power)),type='l', 
      ylab="Global_reactive_power",xlab="datetime" )
+
+plot4 <- function() {
+        par(mfcol=c(2,2))
+        
+        plot(data2$DateTime, as.numeric(as.character(data2$Global_active_power)),type='l',ylab="Global Active Power", xlab="")
+        
+        plot(data2$DateTime, as.numeric(as.character(data2$Sub_metering_1)),type='l', xlab="",ylab ="Energy sub metering")
+        lines(data2$DateTime, as.numeric(as.character(data2$Sub_metering_2)),type='l', col='red')
+        lines(data2$DateTime, data2$Sub_metering_3,type='l', col="blue")
+        legend('topright', c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+               lty=c(1,1,1),col=c("black","red","blue"))
+        
+        plot(data2$DateTime, as.numeric(as.character(data2$Voltage)),type='l', 
+             ylab="Voltage",xlab="datetime" )
+        
+        plot(data2$DateTime, as.numeric(as.character(data2$Global_reactive_power)),type='l', 
+             ylab="Global_reactive_power",xlab="datetime" )
+        
+        
+        
+        #OUTPUT
+        dev.copy(png, file="plot4.png", width=480, height=480)
+        dev.off()## png file device off
+        cat("plot4.png has been saved in", getwd())
+}
+plot4()
