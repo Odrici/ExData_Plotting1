@@ -34,7 +34,7 @@ plot3 <- function() {
         
         
         dev.copy(png, file="plot3.png", width=480, height=480)
-        dev.off()
-        cat("plot3.png has been saved in", getwd())
+        dev.off()## closing the file device
+        
 }
 plot3()
