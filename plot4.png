@@ -20,7 +20,7 @@ plot4 <- function() {
         
         #OUTPUT
         dev.copy(png, file="plot4.png", width=480, height=480)
-        dev.off() ## closing the ffile device
-        cat("plot4.png has been saved in", getwd())
+        dev.off() ## closing the png file device
+        
 }
 plot4()
