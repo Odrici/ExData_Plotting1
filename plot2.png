@@ -1,0 +1,9 @@
+plot2 <- function() {
+        plot(data2$DateTime, as.numeric(as.character(data2$Global_active_power)),
+             type='l',ylab="Global Active Power (Kilowatts)", xlab="")
+        
+        dev.copy(png, file="plot2.png", width=480, height=480)
+        dev.off()
+        cat("plot2.png has been saved in", getwd())
+}
+plot2()
