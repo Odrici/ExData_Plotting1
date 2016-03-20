@@ -13,9 +13,9 @@ data$DateTime<-paste(data$Date, data$Time) ##let's create one variable by concat
                          
                                 hist(as.numeric(as.character(data2$Global_active_power)),main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red") ## we used as.character and as numeric since variable classified as factor
                                 plot1 <- function() {
-                                        dev.off()
+                                        dev.off()## png file device off
                                         hist(as.numeric(as.character(data2$Global_active_power)),main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
                                         dev.copy(png, file="plot1.png", width=480, height=480)
-                                        cat("Plot1.png saved in", getwd())
+                                       
                                 }
                                 plot1()
