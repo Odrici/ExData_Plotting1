@@ -61,6 +61,6 @@ plot4 <- function() {
         #OUTPUT
         dev.copy(png, file="plot4.png", width=480, height=480)
         dev.off()## png file device off
-        cat("plot4.png has been saved in", getwd())
+       
 }
 plot4()
