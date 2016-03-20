@@ -8,7 +8,7 @@ start<-which(data$DateTime==strptime("2007-02-01", "%Y-%m-%d"))
 end<-which(data$DateTime==strptime("2007-02-02 23:59:00", "%Y-%m-%d %H:%M:%S"))
 
 data2<-data[start:end,]
-class(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global_reactive_power "factor",$Voltage "factor",$Global_intensity "factor",$Sub_metering_1 "factor"
+str(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global_reactive_power "factor",$Voltage "factor",$Global_intensity "factor",$Sub_metering_1 "factor"
             ##$Sub_metering_2 "factor",$Sub_metering_3 "numeric"
 hist(as.numeric(as.character(data2$Global_active_power)), 
      main="Global Active Power",
