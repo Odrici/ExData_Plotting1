@@ -1,5 +1,5 @@
 data<-read.table("C:/Users/omard/Desktop/Coursera/exdata-data-household_power_consumption/household_power_consumption.txt",header = TRUE, sep= ";") ## read the DATA
-names(data) ##   
+names(data) ## extract attributes  
 data$DateTime<-paste(data$Date, data$Time) ##let's create one variable by concatenating Date and Time.
  data$DateTime<-strptime(data$DateTime, "%d/%m/%Y %H:%M:%S")##let's change DateTime to yyyy-mm-dd hh:mm:ss
  ##Let's select subset data for dates 2007-02-01 and 2007-02-02.
