@@ -21,7 +21,7 @@ plot2 <- function() {
              type='l',ylab="Global Active Power (Kilowatts)", xlab="")
         
         dev.copy(png, file="plot2.png", width=480, height=480)
-        dev.off()
-        cat("plot2.png has been saved in", getwd())
+        dev.off()## closing the file device
+        
 }
 plot2()
