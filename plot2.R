@@ -12,7 +12,7 @@ str(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global
             ##$Sub_metering_2 "factor",$Sub_metering_3 "numeric"
 hist(as.numeric(as.character(data2$Global_active_power)), 
      main="Global Active Power",
-     xlab="Global Active Power (kilowatts)", col="red") #  we used as.character and as numeric since
+     xlab="Global Active Power (kilowatts)", col="red") #  we used as.character and as.numeric since
                                                         # the variable is factor variable.
 plot(data2$DateTime, as.numeric(as.character(data2$Global_active_power)),
      type='l',ylab="Global Active Power (Kilowatts)", xlab="")
