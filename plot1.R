@@ -8,8 +8,10 @@ data$DateTime<-paste(data$Date, data$Time) ##let's create one variable by concat
                 end<-which(data$DateTime==strptime("2007-02-02 23:59:00", "%Y-%m-%d %H:%M:%S"))
                  
                          data2<-data[start:end,]
+                         str(data) ##$Date "factor",$Time "factor", $Global_active_power "factor",$Global_reactive_power "factor",$Voltage "factor",$Global_intensity "factor",$Sub_metering_1 "factor"
+                                   ##$Sub_metering_2 "factor",$Sub_metering_3 "numeric"
                          
-                                hist(as.numeric(as.character(data2$Global_active_power)),main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red") ## we used as.character and as numeric since classified as factor
+                                hist(as.numeric(as.character(data2$Global_active_power)),main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red") ## we used as.character and as numeric since variable classified as factor
                                 plot1 <- function() {
                                         dev.off()
                                         hist(as.numeric(as.character(data2$Global_active_power)),main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
